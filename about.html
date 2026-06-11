@@ -2,24 +2,71 @@
 <html>
 <head>
     <title>About Me</title>
+    <!-- The meta tag below tells mobile phones to scale the website correctly -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            background-color: #20232a;
-            color: #ffffff;
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            padding: 50px;
+            background-color: #1e1e24; /* Unique dark purple/gray background */
+            color: #f4f4f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
         }
-        h1 { color: #61dafb; }
-        a { color: #ffffff; text-decoration: underline; }
+
+        .about-card {
+            background-color: #2a2a35; /* Slightly lighter card container */
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            max-width: 450px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #ff79c6; /* Vibrant pink accent color for this page */
+            font-size: 28px;
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+
+        p {
+            color: #e2e2ec;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* Styling the back link to look like a clean button */
+        .back-btn {
+            display: inline-block;
+            background-color: #ff79c6;
+            color: #1e1e24;
+            text-decoration: none;
+            padding: 12px 28px;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #ff92df;
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body>
 
-    <h1>About Me</h1>
-    <p>Welcome to my second page! I am currently learning how to build websites and use GitHub.</p>
-    <br>
-    <p><a href="index.html">&larr; Back to Home Page</a></p>
+    <div class="about-card">
+        <h1>About Me</h1>
+        <p>Welcome to my secondary page! I am officially a web developer. I learned how to create files locally, organize them into a clean container layout, fix image extensions, and deploy them live to the internet using Git and GitHub.</p>
+        <a href="index.html" class="back-btn">&larr; Back to Home</a>
+    </div>
 
 </body>
 </html>
