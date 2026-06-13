@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Game</title>
+    <style>
+        body { background: #1a1a2e; color: #fff; font-family: sans-serif; text-align: center; padding: 40px 20px; }
+        .choices { display: flex; justify-content: center; gap: 15px; margin: 30px 0; }
+        .btn { background: #e0aaff; border: none; padding: 15px 25px; border-radius: 8px; font-size: 1.2rem; cursor: pointer; transition: 0.2s; }
+        .btn:hover { background: #c77dff; transform: scale(1.1); }
+        #result { font-size: 1.5rem; margin: 20px; color: #00b4d8; font-weight: bold; }
+        a { color: #00b4d8; text-decoration: none; display: block; margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <h1>🎮 Rock, Paper, Scissors</h1>
+    <p>Score: <span id="score">0</span></p>
+    
+    <div class="choices">
+        <button class="btn" onclick="play('✊')">✊ Rock</button>
+        <button class="btn" onclick="play('✋')">✋ Paper</button>
+        <button class="btn" onclick="play('✌️')">✌️ Scissors</button>
+    </div>
+
+    <p id="result">Pick your move to start!</p>
+    <a href="index.html">← Back to Home</a>
+
+    <script>
+        let currentScore = 0;
+        const moves = ['✊', '✋', '✌️'];
+
+        function play(playerMove) {
+            const computerMove = moves[Math.floor(Math.random() * 3)];
+            let res = "";
+
+            if (playerMove === computerMove) {
+                res = `Tie! Both chose ${playerMove}`;
+            } else if (
+                (playerMove === '✊' && computerMove === '✌️') ||
+                (playerMove === '✋' && computerMove === '✊') ||
+                (playerMove === '✌️' && computerMove === '✋')
+            ) {
+                res = `You Win! ${playerMove} beats ${computerMove}`;
+                currentScore++;
+            } else {
+                res = `You Lose! ${computerMove} beats ${playerMove}`;
+                currentScore = Math.max(0, currentScore - 1);
+            }
+
+            document.getElementById('result').innerText = res;
+            document.getElementById('score').innerText = currentScore;
+        }
+    </script>
+</body>
+</html>
