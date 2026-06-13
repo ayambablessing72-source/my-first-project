@@ -14,6 +14,7 @@
     </style>
 </head>
 <body>
+
     <h1>🎮 Rock, Paper, Scissors</h1>
     <p>Score: <span id="score">0</span></p>
     
@@ -28,6 +29,7 @@
 
     <script>
         let currentScore = 0;
+        // Clean array matching the exact button emojis
         const moves = ['✊', '✋', '✌️'];
 
         function play(playerMove) {
@@ -35,6 +37,7 @@
             let res = "";
 
             if (playerMove === computerMove) {
+                // Notice the backtick ` symbols used here for string interpolation
                 res = `Tie! Both chose ${playerMove}`;
             } else if (
                 (playerMove === '✊' && computerMove === '✌️') ||
